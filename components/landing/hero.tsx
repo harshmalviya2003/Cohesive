@@ -54,7 +54,6 @@ export function Hero() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top 80%',
-            delay: 0.3,
           },
         }
       );
@@ -73,7 +72,6 @@ export function Hero() {
             scrollTrigger: {
               trigger: containerRef.current,
               start: 'top 80%',
-              delay: 0.5,
             },
           }
         );
@@ -91,7 +89,6 @@ export function Hero() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top 80%',
-            delay: 0.7,
           },
         }
       );
@@ -109,7 +106,6 @@ export function Hero() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top 80%',
-            delay: 0.9,
           },
         }
       );
@@ -126,7 +122,6 @@ export function Hero() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: 'top 70%',
-            delay: 1.1,
           },
         }
       );
@@ -146,7 +141,6 @@ export function Hero() {
             scrollTrigger: {
               trigger: containerRef.current,
               start: 'top 60%',
-              delay: 1.3,
             },
           }
         );
@@ -186,6 +180,7 @@ export function Hero() {
             },
           }
         );
+        
       }
     }, containerRef);
 
