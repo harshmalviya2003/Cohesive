@@ -14,8 +14,8 @@ export function Navbar() {
 
   // Close menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !(menuRef.current as HTMLElement).contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
     };
@@ -25,7 +25,7 @@ export function Navbar() {
 
   // Close menu on ESC key press
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isMenuOpen) {
         setIsMenuOpen(false);
       }
