@@ -76,7 +76,7 @@ export function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-24 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 dark:from-blue-950/50 dark:via-gray-900 dark:to-purple-950/50 relative overflow-hidden">
+    <section id="pricing" className="py-24 bg-[#070018] relative overflow-hidden rounded-[3rem] mx-4 my-8">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         <div className="absolute top-20 left-10 w-40 h-40 bg-[#2E56FF] rounded-full filter blur-3xl"></div>
@@ -93,13 +93,13 @@ export function Pricing() {
           <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-[#2E56FF]/10 text-[#2E56FF] dark:bg-[#1A1B6B]/20 dark:text-[#1A1B6B] mb-4">
             TRANSPARENT PRICING
           </span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 md:mb-8 text-gray-900 dark:text-white">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 md:mb-8 text-white">
             Simple Pricing,{' '}
             <span className="bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] bg-clip-text text-transparent">
               Powerful Results
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 md:mb-12">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 md:mb-12">
             Choose the plan that fits your needs. Scale up or down anytime.
           </p>
         </motion.div>
@@ -116,8 +116,8 @@ export function Pricing() {
               <Card
                 className={`p-8 relative overflow-hidden transition-all duration-300 hover:scale-[1.02] ${
                   tier.featured
-                    ? 'border border-[#2E56FF]/20 dark:border-[#1A1B6B]/20 shadow-xl bg-white dark:bg-gray-800'
-                    : 'bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700'
+                    ? 'border border-[#2E56FF]/20 bg-[#0A0A1F] dark:bg-[#0A0A1F]'
+                    : 'bg-[#0A0A1F] dark:bg-[#0A0A1F] border border-gray-800'
                 }`}
               >
                 {tier.featured && (
@@ -128,16 +128,16 @@ export function Pricing() {
                 
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{tier.name}</h3>
-                    <p className="text-gray-600 dark:text-gray-300">{tier.description}</p>
+                    <h3 className="text-2xl font-bold mb-1 text-white">{tier.name}</h3>
+                    <p className="text-gray-300">{tier.description}</p>
                   </div>
                   {tier.featured && <Zap className="h-6 w-6 text-[#2E56FF] dark:text-[#1A1B6B] fill-[#2E56FF]/20 dark:fill-[#1A1B6B]/20" />}
                 </div>
                 
                 <div className="mb-8">
-                  <div className="text-5xl font-bold mb-1 flex items-end justify-center text-gray-900 dark:text-white">
+                  <div className="text-5xl font-bold mb-1 flex items-end justify-center text-white">
                     ${tier.price}
-                    <span className="text-lg text-gray-500 dark:text-gray-400 ml-1">/mo</span>
+                    <span className="text-lg text-gray-400 ml-1">/mo</span>
                     {tier.name.includes("Annual") && (
                       <span className="text-sm bg-[#2E56FF]/10 dark:bg-[#1A1B6B]/20 text-[#2E56FF] dark:text-[#1A1B6B] px-2 py-1 rounded ml-2 mb-2">
                         Save 20%
@@ -145,14 +145,14 @@ export function Pricing() {
                     )}
                   </div>
                   {tier.name.includes("Annual") && (
-                    <p className="text-sm text-gray-500 dark:text-gray-400">Billed annually at ${parseInt(tier.price) * 12}</p>
+                    <p className="text-sm text-gray-400">Billed annually at ${parseInt(tier.price) * 12}</p>
                   )}
                 </div>
                 
                 <div className="mb-8">
                   <ul className="space-y-3 text-left">
                     {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-3 text-gray-600 dark:text-gray-300">
+                      <li key={featureIndex} className="flex items-start gap-3 text-gray-300">
                         <FeatureIcon feature={feature} />
                         <span>{feature}</span>
                       </li>
@@ -163,8 +163,8 @@ export function Pricing() {
                 <Button
                   className={`w-full mx-auto max-w-xs group relative overflow-hidden ${
                     tier.featured
-                      ? 'bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] hover:shadow-lg hover:shadow-[#2E56FF]/20 dark:hover:shadow-[#1A1B6B]/20'
-                      : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white'
+                      ? 'bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] hover:shadow-lg hover:shadow-[#2E56FF]/20'
+                      : 'bg-[#0A0A1F] hover:bg-[#0F0F2F] border border-[#2E56FF] text-white'
                   }`}
                   size="lg"
                 >
@@ -184,7 +184,7 @@ export function Pricing() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
+          <p className="text-gray-300 mb-4">
             Need something custom? Enterprise plans available.
           </p>
           <Button variant="outline" className="text-[#2E56FF] dark:text-[#1A1B6B] border-[#2E56FF] dark:border-[#1A1B6B] hover:text-[#1A1B6B] dark:hover:text-[#2E56FF] hover:border-[#1A1B6B] dark:hover:border-[#2E56FF]">

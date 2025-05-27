@@ -121,18 +121,26 @@ export function BlogSection() {
     <section
       id="blog"
       ref={sectionRef}
-      className="py-24 bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 dark:from-blue-950/50 dark:via-gray-900 dark:to-purple-950/50"
+      className="py-24 bg-[#070018] relative overflow-hidden rounded-[3rem] mx-4 my-8"
     >
-      <div className="container mx-auto px-6 max-w-6xl">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10">
+        <div className="absolute top-20 left-10 w-40 h-40 bg-[#2E56FF] rounded-[50%] filter blur-[100px]"></div>
+        <div className="absolute bottom-10 right-10 w-60 h-60 bg-[#1A1B6B] rounded-[50%] filter blur-[100px]"></div>
+        <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-[#2E56FF] rounded-[50%] filter blur-[100px]"></div>
+        <div className="absolute top-1/3 right-1/4 w-52 h-52 bg-[#1A1B6B] rounded-[50%] filter blur-[100px]"></div>
+      </div>
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
         {/* Section Heading */}
         <div ref={headingRef} className="text-center mb-16 opacity-100">
-        <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-[#2E56FF]/10 text-[#2E56FF] dark:bg-[#1A1B6B]/20 dark:text-[#1A1B6B] mb-4">
+          <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-[#2E56FF]/10 text-[#2E56FF] mb-4">
             BLOG
           </span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white mb-6 md:mb-8">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 md:mb-8">
             Latest <span className="bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] bg-clip-text text-transparent">Blog Posts</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 md:mb-12">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 md:mb-12">
             Stay updated with the latest insights, trends, and tips from our expert writers.
           </p>
         </div>
@@ -142,9 +150,9 @@ export function BlogSection() {
           {blogPosts.map((post, index) => (
             <div
               key={index}
-              className="p-8 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group opacity-100"
+              className="p-8 bg-[#0A0A1F] border border-[#2E56FF]/20 rounded-[2rem] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group opacity-100"
             >
-              <div className="relative h-48 overflow-hidden rounded-xl mb-6">
+              <div className="relative h-48 overflow-hidden rounded-[1.5rem] mb-6">
                 <img
                   src={post.image}
                   alt={post.title}
@@ -156,21 +164,21 @@ export function BlogSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <a
                     href="#"
-                    className="text-white text-sm font-semibold bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] px-4 py-2 rounded-full transition-all duration-200 shadow-lg"
+                    className="text-white text-sm font-semibold bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] px-6 py-2.5 rounded-full transition-all duration-200 shadow-lg"
                   >
                     Read More →
                   </a>
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-[#2E56FF] dark:group-hover:text-[#1A1B6B] transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-[#2E56FF] transition-colors duration-200">
                   <a href="#">{post.title}</a>
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+                <p className="text-gray-300 text-sm mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-                  <span className="hover:text-[#2E56FF] dark:hover:text-[#1A1B6B] transition-colors">{post.author}</span>
+                <div className="flex items-center justify-between text-sm text-gray-400">
+                  <span className="hover:text-[#2E56FF] transition-colors">{post.author}</span>
                   <span>{post.date}</span>
                 </div>
               </div>
@@ -182,7 +190,7 @@ export function BlogSection() {
         <div className="text-center mt-12">
           <a
             href="#"
-            className="inline-block px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] rounded-full hover:shadow-xl transition-all duration-200"
+            className="inline-block px-8 py-3.5 text-sm font-medium text-white bg-gradient-to-r from-[#2E56FF] to-[#1A1B6B] rounded-full hover:shadow-xl hover:shadow-[#2E56FF]/20 transition-all duration-200"
           >
             View All Articles
           </a>
