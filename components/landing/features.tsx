@@ -50,8 +50,8 @@ export function Features() {
           ease: 'power4.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 75%',
-            delay: 0.4,
+            start: 'top 75%', 
+
           },
         }
       );
@@ -71,7 +71,6 @@ export function Features() {
             scrollTrigger: {
               trigger: sectionRef.current,
               start: 'top 65%',
-              delay: 0.6,
             },
           }
         );
